@@ -258,4 +258,17 @@ fetch(request)
 
 ![image-20200615220201165](img/README/image-20200615220201165.png)
 
+更改教程参考
+https://github.com/CCChieh/IBMYes
+
+利用Github的Actions 每周重启 IBM Cloud Fonudray里面有一个BUG要修正
+编辑 /.github/workflows/ibm.yml第38行
+
+./IBM_Cloud_CLI/ibmcloud cf install
+修改成
+./IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
+
+测试cloudflare的脚本
+原作者的不是太好用，推荐其他的，大家可以试试
+https://github.com/badafans/better-cloudflare-ip
 这里稍微提下原理吧，主要涉及CDN和请求头部，CDN识别流量是访问哪个网站的是根据请求头的Host来识别，所以这里要么host用我们的域名 ，要么我们伪装成我们的域名，这样都可以达到回源我们网站的请求。如果自己有域名也可以换自己的域名，域名也可以从第三方接入商cname，有兴趣的同学可以自己研究下。
